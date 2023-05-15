@@ -13,12 +13,12 @@ const initdb = async () =>
   });
 
 export const putDb = async (content) => {
-  console.error('putDb not implemented');
+  
 
-  const contactDb = await openDB('jate', 1);
+  const indexedDb = await openDB('jate', 1);
 
   // Create a new transaction and specify the database and data privileges.
-  const tx = contactDb.transaction('jate', 'readwrite');
+  const tx = indexedDb.transaction('jate', 'readwrite');
 
   // Open up the desired object store.
   const store = tx.objectStore('jate');
@@ -33,12 +33,12 @@ export const putDb = async (content) => {
 };
 
 export const getDb = async () => {
-  console.error('getDb not implemented');
 
-const contactDb = await openDB('jate', 1);
+
+const indexedDb = await openDB('jate', 1);
 
 // Create a new transaction and specify the database and data privileges.
-const tx = contactDb.transaction('jate', 'readonly');
+const tx = indexedDb.transaction('jate', 'readonly');
 
 // Open up the desired object store.
 const store = tx.objectStore('jate');
